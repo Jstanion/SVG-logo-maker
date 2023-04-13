@@ -10,11 +10,13 @@ inquirer
         },
         {
             name: 'textColor',
-            message: 'Enter text color keyword (OR a hexidecimal number):'
+            message: 'Enter text color keyword (OR a hexidecimal number):',
         },
         {
+            type: 'list',
             name: 'shape',
-            message: 'Select a shape from the following list:'
+            message: 'Select a shape from the following list:',
+            choices: ['Circle', 'Triangle', 'Square']
         },
         {
             name: 'shapeColor',
