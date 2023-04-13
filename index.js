@@ -3,7 +3,7 @@ const inquirer = require('inquirer');
 
 // Prompts for required user input to generate SVG file
 inquirer
-    .createPromptModule([
+    .prompt([
         {
             name: 'text',
             message: 'Enter up to three characters:'
@@ -21,6 +21,6 @@ inquirer
             message: 'Enter shape color keyword (OR a hexidecimal number):'
         }
     ])
-    .then(answers => {
+    .then((answers) => {
         console.log('Logo has been generated', answers); // Code to generate SVG logo goes here
-    })
+    });
