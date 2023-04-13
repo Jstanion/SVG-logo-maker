@@ -22,5 +22,6 @@ inquirer
         }
     ])
     .then((answers) => {
-        console.log('Logo has been generated', answers); // Code to generate SVG logo goes here
+        console.log('Generated logo.svg');
+        console.log(answers); // Code to generate SVG logo goes here
     });
