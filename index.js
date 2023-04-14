@@ -1,8 +1,12 @@
 // Imports the inquirer package
 const inquirer = require('inquirer');
+const fs = require('fs');
 
-// Prompts for required user input to generate SVG file
-inquirer
+// Function to prompt user input
+const svgInit = () => {
+
+    // Prompts for required user input to generate SVG file
+    inquirer
     .prompt([
         {
             name: 'text',
@@ -25,5 +29,16 @@ inquirer
     ])
     .then((answers) => {
         console.log('Generated logo.svg');
-        console.log(answers); // Code to generate SVG logo goes here
+        console.log(answers); 
+        
+        // Generated SVG code is set to an object here
+        const svgCode = 'test code';
+
+        // Write the generated SVG code to a file called logo.svg using the fs module.
+        fs.writeFileSync('./examples/logo.svg', svgCode, (err) =>
+        err ? console.log(err) : console.log('success'));
     });
+};
+
+    // Call function to intialize application
+    svgInit()
