@@ -42,8 +42,8 @@ describe('Circle', () => {
     });
 
     describe('Text Color Parameter', () => {
-        xit('should throw an error if textColor input is not a color keyword', () => {
-            const cb = () => new Circle('color')
+        it('should throw an error if textColor input is not a valid color keyword', () => {
+            const cb = () => new Circle('ABC', 'color')
             const err = new Error('Invalid color keyword.')
             console.log(Circle)
 

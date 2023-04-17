@@ -15,7 +15,8 @@
   "license": "ISC",
   "dependencies": {
     "@svgdotjs/svg.js": "^3.1.2",
-    "inquirer": "^8.2.4"
+    "inquirer": "^8.2.4",
+    "jsdom": "^21.1.1"
   },
   "devDependencies": {
     "jest": "^29.5.0"
