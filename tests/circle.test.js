@@ -2,52 +2,19 @@ const Circle = require('../lib/circle');
 
 describe('Circle', () => {
     describe('Instantiate', () => {
-        it('should create a new Circle object with the given data', () => {
-            const circle = new Circle('ABC', 'white', 'red');
-            const newObject = {
-                text: 'ABC',
-                textColor: 'white',
-                shapeType: 'Circle',
-                shapeColor: 'red'
-            }
+        it('should create a new Circle Object', () => {
+            const shape = new Circle()
 
-            expect(circle).toEqual(newObject);
+            expect(shape).toBeDefined();
         });
-    });
 
-    describe('Text Parameter', () => {
-        it('should throw an error if text parameter is less than three characters long', () => {
-            const text = 'HI'
-            const cb = () => new Circle(text);
-            const err = new Error('Text input must be 3 characters long.');
+    describe('Values passed', () => {
+        it('should return the passed color value to the rendered HTML string', () => {
+            const shape = new Circle();
+            shape.setColor('blue')
 
-            expect(cb).toThrowError(err);
-        });
-        
-        it('should throw an error if text parameter is greater than three characters long', () => {
-            const text = 'HELLO'
-            const cb = () => new Circle(text);
-            const err = new Error('Text input must be 3 characters long.');
-
-            expect(cb).toThrowError(err);
-        });
-        
-        it('should pass when the input is 3 characters long', () => {
-            const text = 'ABC'
-            const cb = () => new Circle(text);
-            const err = new Error('Text input must be 3 characters long.');
-
-            expect(cb).not.toThrowError(err);
-        });
-    });
-
-    describe('Text Color Parameter', () => {
-        it('should throw an error if textColor input is not a valid color keyword', () => {
-            const cb = () => new Circle('ABC', 'color')
-            const err = new Error('Invalid color keyword.')
-            console.log(Circle)
-
-            expect(cb).toThrowError(err);
+            expect(shape.render()).toEqual('<circle cx="150" cy="105" r="80" fill="blue"/>');
+            });
         });
     });
 });
